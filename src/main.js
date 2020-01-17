@@ -4,8 +4,12 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import './plugins/element.js'
+import * as filters from './filters'
 
 Vue.config.productionTip = false
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 new Vue({
   store,

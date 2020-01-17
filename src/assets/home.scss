@@ -1,0 +1,537 @@
+$bg: #404248;
+$bd: #333438;
+$mid: #2e2f33;
+$main: #52cc90;
+$docRight:#1c1c1f;
+
+.container {
+  height: 100%;
+  background: $bg;
+
+  .top {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $bd;
+
+    .left {
+      flex-wrap: nowrap;
+      display: flex;
+      align-items: center;
+
+      .title {
+        font-size: 14px;
+        color: #ececec;
+        margin-left: 22px;
+        margin-right: 20px;
+      }
+
+      .identity {
+        color: #aaa;
+        font-size: 12px;
+        margin-right: 18px;
+
+        div {
+          height: 20px;
+          line-height: 20px;
+          border: 1px solid #888;
+
+          span {
+            background-color: #888;
+            color: #fff;
+            height: 100%;
+            display: inline-block;
+            padding: 0 4px;
+          }
+
+          i {
+            margin-left: 6px;
+            padding-right: 5px;
+            user-select: all;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .user-box {
+        position: relative;
+
+        i.set {
+          font-size: 20px;
+          padding: 4px;
+          margin: 0px 20px;
+          background-color: aliceblue;
+          border-radius: 100%;
+          cursor: pointer;
+        }
+      }
+
+      .time {
+        font-size: 12px;
+        color: #ececec;
+        margin-right: 10px;
+      }
+
+      .time::before {
+        content: "";
+        display: inline-block;
+        background-color: #52cc90;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        margin-right: 5px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  .main {
+    height: calc(100% - 50px);
+    display: flex;
+
+    .left {
+      width: 64px;
+      height: 100%;
+      float: left;
+
+      .edu-interact-slider {
+        li {
+          width: 100%;
+          height: 64px;
+          text-align: center;
+          color: #fff;
+          font-size: 12px;
+          padding: 20px 0 15px;
+          cursor: pointer;
+
+          i {
+            font-size: 20px;
+            display: block;
+          }
+
+          span {
+            display: block;
+            margin-top: 2px;
+          }
+        }
+
+        li.active {
+          color: $main
+        }
+      }
+    }
+
+    .mid {
+      flex-grow: 1;
+      background-color: $mid;
+      position: relative;
+      display: flex;
+      .file_choose {
+        width: 200px;
+        text-align: center;
+        margin: auto;
+      }
+    }
+
+    .right {
+      position: relative;
+      width: 320px;
+
+      .right_top {
+        height: 240px;
+        background-color: #333438;
+
+        .teacher-placeholder {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          position: relative;
+
+          img {
+            height: 60px;
+            width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+        .flvContainer{
+          width: 100%;
+          height: 100%;
+        }
+        #videoElement{
+          width: 100%;
+          height: 100%;
+        }
+        .flvContainer:hover .tools{
+          display: flex
+        }
+        .tools{
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          border: 2px solid rgba(82,204,144,.8);
+          background-color: rgba(0,0,0,.8);
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #fff;
+          align-items: center;
+          display: none;
+          .tool-item{
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .right_chat {
+        height: calc(100% - 320px);
+        color: #fff;
+      }
+
+      .right_bottom {
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        background: #34363a;
+        padding: 10px;
+
+        .write-box {
+          margin-top: 10px;
+
+          .text {
+            width: 83%;
+            height: 32px;
+            background: #fff;
+            font-size: 12px;
+            color: #444;
+            line-height: 30px;
+            padding-left: 10px;
+            border: none;
+            outline-style: none;
+            border-radius: 4px 0 0 4px;
+          }
+
+          .send {
+            width: 17%;
+            height: 32px;
+            border-radius: 0 4px 4px 0;
+            background-color: #a6a6a8;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            border: none;
+          }
+
+          .send.active {
+            background-color: $main;
+          }
+        }
+
+        .close-chat {
+          span {
+            font-size: 12px;
+            color: #aaa;
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+
+        .icon-biaoqing_icon {
+          font-size: 18px;
+          color: #aaa;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.chat_list {
+  height: 100%;
+
+  ul {
+    width: 100%;
+    padding: 0px 10px;
+  }
+
+  .user {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 5px;
+  }
+
+  .msg {
+    max-width: 88%;
+
+    .title {
+      padding-left: 0;
+      padding-right: 7px;
+      text-align: right;
+      max-width: 100%;
+      font-size: 12px;
+      color: #999;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-left: 7px;
+    }
+
+    .content {
+      margin-left: 0;
+      margin-right: 5px;
+      float: right;
+      max-width: 100%;
+      background: rgba(46, 47, 51, 0.5);
+      padding: 10px;
+      font-size: 12px;
+      color: #fff;
+      line-height: 20px;
+      border-radius: 4px;
+      margin-left: 5px;
+      margin-top: 2px;
+      word-wrap: break-word;
+      word-break: break-word;
+      text-align: justify;
+      float: left;
+    }
+  }
+}
+
+.user_list {
+  .user-item {
+    margin-bottom: 5px;
+  }
+
+  .user {
+    background: #6d6d6d;
+  }
+  .teacher{
+    color: #ff9f5b;
+  }
+
+  .name {
+    font-size: 12px;
+    color: #ececec;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+  }
+  .more{
+    cursor: pointer;
+    i:first-child{
+      margin-right: 10px
+    }
+  }
+}
+
+#mytabs {
+  height: 100%;
+}
+
+.ico {
+  font-size: 12px;
+}
+
+.file_dialog {
+  .file_table {
+    margin-top: 10px
+  }
+
+  .upload_btn {
+    display: inline-block;
+    margin-right: 15px
+  }
+}
+
+.doc_share {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  .picItem {
+    height: 100%;
+    text-align: center;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .doc_right {
+    position: absolute;
+    background-color: $docRight;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    z-index: 3;
+
+    .ppt_list {
+      width: 140px;
+      padding: 20px;
+
+      .ppt_item {
+        height: 60px;
+        margin-bottom: 20px;
+        background-color: #999;
+        text-align: center;
+        cursor: pointer;
+
+        img {
+          height: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .changeFlag {
+      position: absolute;
+      top: 50%;
+      font-size: 20px;
+      left: -25px;
+      background: $docRight;
+      border-radius: 2px;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.white_board {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  z-index: 3;
+  top: 0px;
+
+  .board1 {
+    height: 100%;
+    background-color: transparent
+  }
+}
+
+.desk_share {
+  height: 100%;
+  display: flex;
+  width: 100%
+}
+.info_tips {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  background-color: #2e2f33;
+  z-index: 10;
+}
+.el-carousel {
+  height: 100%;
+}
+
+.media_dialog {
+  text-align: center;
+
+  .media_video {
+    height: 180px;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #999;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+
+    i {
+      font-size: 40px;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      color: $bg
+    }
+  }
+  .media_item{
+    width: 70%;
+    margin: 20px auto 0px;
+    text-align: left;
+    label{
+      margin-right: 20px
+    }
+  }
+}
+.rtcList{
+  position: absolute;
+  // background: #404248;
+  height: calc(100%);
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  flex-direction: column;
+  flex-wrap: wrap
+}
+
+#rtcItemControl{
+  height: 30px;
+  width: 210px;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0,0,0,.8);
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+  z-index: 6;
+  .tool-item{
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+  }
+}
+.notice{
+  position: absolute;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: bold;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  animation: marquee 10s linear infinite;
+  width: 100%;
+  background: #4bc388;
+  top: 280px;
+}
+.notice:hover {
+  animation-play-state: paused
+}
+ /* Make it move */
+ @keyframes marquee {
+  0%   { text-indent: 100% }
+  100% { text-indent: -100% }
+}
