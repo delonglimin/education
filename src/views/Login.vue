@@ -5,13 +5,13 @@
     </div>
     <div class="right">
       <el-row class="form">
-        <el-col :span="12" :offset="6">
+        <el-col :span="16" :offset="4">
           <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
             <el-form-item label="姓名:" prop="name">
               <el-input v-model="ruleForm.name"></el-input>
             </el-form-item>
             <el-form-item label="房间:" prop="room">
-              <el-input v-model="ruleForm.room"></el-input>
+              <el-input v-model.number="ruleForm.room"></el-input>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitForm('ruleForm')">进入</el-button>
@@ -45,7 +45,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+         this.$router.push("/home")
         } else {
           console.log("error submit!!");
           return false;
