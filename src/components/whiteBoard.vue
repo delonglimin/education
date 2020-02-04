@@ -128,7 +128,7 @@ export default {
       }
     },
     resizeCanvas() {
-      this.canvas.width = window.innerWidth - 320 - 64; //设置全屏占用宽高
+      this.canvas.width = window.innerWidth - 320; //设置全屏占用宽高
       this.canvas.height = window.innerHeight - 50;
     },
     initCanvas() {

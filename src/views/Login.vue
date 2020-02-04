@@ -45,7 +45,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-         this.$router.push("/home")
+          this.$store.dispatch("setRoomInfo", this.ruleForm);
+          this.$router.push("/home")
         } else {
           console.log("error submit!!");
           return false;

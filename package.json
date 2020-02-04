@@ -17,6 +17,7 @@
   },
   "main": "src/index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
     "core-js": "^3.4.4",
     "electron-squirrel-startup": "^1.0.0",
     "element-ui": "^2.4.5",

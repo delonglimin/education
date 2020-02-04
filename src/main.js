@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import './plugins/axios'
 import App from './App.vue'
 import store from './store'

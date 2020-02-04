@@ -54,12 +54,22 @@ $docRight:#1c1c1f;
       }
     }
 
+    .mid {
+      flex-grow: 1;
+      text-align: center;
+    }
+
     .right {
       display: flex;
       align-items: center;
 
       .user-box {
         position: relative;
+        margin: 0px 20px;
+
+        .el-dropdown {
+          color: white;
+        }
 
         i.set {
           font-size: 20px;
@@ -132,6 +142,7 @@ $docRight:#1c1c1f;
       background-color: $mid;
       position: relative;
       display: flex;
+
       .file_choose {
         width: 200px;
         text-align: center;
@@ -144,7 +155,7 @@ $docRight:#1c1c1f;
       width: 320px;
 
       .right_top {
-        height: 240px;
+        height: calc(100% - 50px);
         background-color: #333438;
 
         .teacher-placeholder {
@@ -153,9 +164,11 @@ $docRight:#1c1c1f;
           text-align: center;
           position: relative;
 
-          img {
+          .peo {
             height: 60px;
             width: auto;
+            font-size: 60px;
+            color: #909399;
             position: absolute;
             top: 0;
             left: 0;
@@ -164,24 +177,28 @@ $docRight:#1c1c1f;
             margin: auto;
           }
         }
-        .flvContainer{
+
+        .flvContainer {
           width: 100%;
           height: 100%;
         }
-        #videoElement{
+
+        #videoElement {
           width: 100%;
           height: 100%;
         }
-        .flvContainer:hover .tools{
+
+        .flvContainer:hover .tools {
           display: flex
         }
-        .tools{
+
+        .tools {
           height: 100%;
           width: 100%;
           left: 0;
           top: 0;
-          border: 2px solid rgba(82,204,144,.8);
-          background-color: rgba(0,0,0,.8);
+          border: 2px solid rgba(82, 204, 144, .8);
+          background-color: rgba(0, 0, 0, .8);
           position: absolute;
           display: flex;
           flex-direction: column;
@@ -189,7 +206,8 @@ $docRight:#1c1c1f;
           color: #fff;
           align-items: center;
           display: none;
-          .tool-item{
+
+          .tool-item {
             font-size: 18px;
             margin: 5px;
             cursor: pointer;
@@ -198,21 +216,21 @@ $docRight:#1c1c1f;
       }
 
       .right_chat {
-        height: calc(100% - 320px);
+        height: 200px;
         color: #fff;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
       }
 
       .right_bottom {
         width: 100%;
-        height: 80px;
-        position: absolute;
-        bottom: 0;
+        height: 50px;
         background: #34363a;
-        padding: 10px;
 
         .write-box {
-          margin-top: 10px;
-
+          height: 100%;
+          padding: 8px;
           .text {
             width: 83%;
             height: 32px;
@@ -264,7 +282,7 @@ $docRight:#1c1c1f;
 }
 
 .chat_list {
-  height: 100%;
+  height: 150px;
 
   ul {
     width: 100%;
@@ -325,7 +343,8 @@ $docRight:#1c1c1f;
   .user {
     background: #6d6d6d;
   }
-  .teacher{
+
+  .teacher {
     color: #ff9f5b;
   }
 
@@ -336,9 +355,11 @@ $docRight:#1c1c1f;
     white-space: nowrap;
     -webkit-line-clamp: 1;
   }
-  .more{
+
+  .more {
     cursor: pointer;
-    i:first-child{
+
+    i:first-child {
       margin-right: 10px
     }
   }
@@ -367,6 +388,7 @@ $docRight:#1c1c1f;
   height: 100%;
   position: relative;
   width: 100%;
+
   .picItem {
     height: 100%;
     text-align: center;
@@ -435,6 +457,7 @@ $docRight:#1c1c1f;
   display: flex;
   width: 100%
 }
+
 .info_tips {
   height: 100%;
   display: flex;
@@ -442,6 +465,7 @@ $docRight:#1c1c1f;
   background-color: #2e2f33;
   z-index: 10;
 }
+
 .el-carousel {
   height: 100%;
 }
@@ -474,16 +498,19 @@ $docRight:#1c1c1f;
       color: $bg
     }
   }
-  .media_item{
+
+  .media_item {
     width: 70%;
     margin: 20px auto 0px;
     text-align: left;
-    label{
+
+    label {
       margin-right: 20px
     }
   }
 }
-.rtcList{
+
+.rtcList {
   position: absolute;
   // background: #404248;
   height: calc(100%);
@@ -494,25 +521,27 @@ $docRight:#1c1c1f;
   flex-wrap: wrap
 }
 
-#rtcItemControl{
+#rtcItemControl {
   height: 30px;
   width: 210px;
   left: 0px;
   top: 0px;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0, 0, 0, .8);
   position: absolute;
   flex-direction: column;
   justify-content: center;
   color: #fff;
   align-items: center;
   z-index: 6;
-  .tool-item{
+
+  .tool-item {
     font-size: 18px;
     margin: 5px;
     cursor: pointer;
   }
 }
-.notice{
+
+.notice {
   position: absolute;
   z-index: 10;
   font-size: 14px;
@@ -527,11 +556,18 @@ $docRight:#1c1c1f;
   background: #4bc388;
   top: 280px;
 }
+
 .notice:hover {
   animation-play-state: paused
 }
- /* Make it move */
- @keyframes marquee {
-  0%   { text-indent: 100% }
-  100% { text-indent: -100% }
+
+/* Make it move */
+@keyframes marquee {
+  0% {
+    text-indent: 100%
+  }
+
+  100% {
+    text-indent: -100%
+  }
 }
